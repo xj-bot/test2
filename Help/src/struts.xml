@@ -147,5 +147,17 @@
 			<result name="success" type="redirect">/EmployeeIndex.jsp</result>
 			<result name="failed">/findMission.jsp</result>
 		</action>
+		<action name="findTeam" class="employeeTeamAction" method="findTeam">
+			<result name="success">/EmployeeTeam.jsp</result>
+		</action>
+		<action name="employeeCreateTeam" class="employeeCreateTeamAction" method="employeeCreateTeam">
+			<result name="success" type="chain">findTeam</result>
+			<result name="input">/EmployeeGreateTeam.jsp</result>
+			<result name="failed">/EmployeeCreateTeam.jsp</result>
+		</action>
+		<action name="employeeExitTeam" class="employeeTeamAction" method="employeeExitTeam">
+			<result name="success" type="chain">findTeam</result>
+			
+		</action>
 	</package>
 </struts>    

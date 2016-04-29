@@ -126,7 +126,25 @@
 	<!-- 受雇者上传头像action -->
 	<bean id="employeeUploadAction" class="cn.edu.zjut.action.EmployeeUploadAction" scope="prototype">
 	</bean>
-
+	
+	<!-- 查找是否有队伍 -->
+	<bean id="employeeTeamAction" class="cn.edu.zjut.action.EmployeeTeamAction" scope="prototype">
+		<property name="employeeTeamController" ref="employeeTeamController"/>
+	</bean>
+	
+	<bean id="employeeTeamController" class="cn.edu.zjut.service.EmployeeTeamController">
+		<property name="employeeDAO" ref="employeeDAO" />
+	</bean>
+	<!-- 创建队伍 -->
+	<bean id="employeeCreateTeamAction" class="cn.edu.zjut.action.EmployeeCreateTeamAction" scope="prototype">
+		<property name="employeeCreateTeamController" ref="employeeCreateTeamController"/>
+	</bean>
+	
+	<bean id="employeeCreateTeamController" class="cn.edu.zjut.service.EmployeeCreateTeamController">
+		<property name="igroupDAO" ref="igroupDAO" />
+	</bean>
+	
+	<bean id="igroupDAO" class="cn.edu.zjut.dao.IgroupDAO" parent="baseDAO"/>
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" 
                     value="com.mysql.jdbc.Driver"/>
@@ -153,6 +171,7 @@
 			    <value>cn/edu/zjut/po/Employee.hbm.xml</value>
 			    <value>cn/edu/zjut/po/Merchant.hbm.xml</value>
 			    <value>cn/edu/zjut/po/Order.hbm.xml</value>
+			    <value>cn/edu/zjut/po/Igroup.hbm.xml</value>
 		    </list>
 	    </property>
 	</bean>

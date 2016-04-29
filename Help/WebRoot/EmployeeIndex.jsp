@@ -26,23 +26,34 @@
     			document.getElementById("historyMission").style.display="none";
     			document.getElementById("contact").style.display="none";
     			document.getElementById("fund").style.display="none";
+    			document.getElementById("team").style.display="none";
    			}
    			if("historyMission"==name){
     			document.getElementById(name).style.display="block";
     			document.getElementById("about").style.display="none";
     			document.getElementById("contact").style.display="none";
     			document.getElementById("fund").style.display="none";
+    			document.getElementById("team").style.display="none";
    			}
    			if("contact"==name){
     			document.getElementById(name).style.display="block";
     			document.getElementById("about").style.display="none";
     			document.getElementById("historyMission").style.display="none";
     			document.getElementById("fund").style.display="none";
+    			document.getElementById("team").style.display="none";
    			}
    			if("fund"==name){
    				document.getElementById(name).style.display="block";
     			document.getElementById("about").style.display="none";
     			document.getElementById("historyMission").style.display="none";
+    			document.getElementById("contact").style.display="none";
+    			document.getElementById("team").style.display="none";
+   			}
+   			if("team"==name){
+   				document.getElementById(name).style.display="block";
+    			document.getElementById("about").style.display="none";
+    			document.getElementById("historyMission").style.display="none";
+    			document.getElementById("fund").style.display="none";
     			document.getElementById("contact").style.display="none";
    			}
   		}
@@ -103,6 +114,7 @@
                     	 <li><a href="#projects" onclick="showDiv('historyMission')"><i class="fa fa-history"></i>历史任务</a></li>
                     	 <li><a href="#fund" onclick="showDiv('fund')"><i class="fa fa-yen"></i>我的资产</a></li>
                     	 <li><a href="#contact" onclick="showDiv('contact')"><i class="fa fa-cog"></i>个人信息</a></li>
+                    	 <li><a href="#team" onclick="showDiv('team')"><i class="fa fa-flag"></i>我的团队</a></li>
                     </ul>
                 </div>
             </div>
@@ -137,6 +149,7 @@
                     <li><a href="#projects" onclick="showDiv('historyMission')"><i class="fa fa-history"></i>历史任务</a></li>
                     <li><a href="#fund" onclick="showDiv('fund')"><i class="fa fa-yen"></i>我的资产</a></li>
                     <li><a href="#contact" onclick="showDiv('contact')"><i class="fa fa-cog"></i>个人信息</a></li>
+                    <li><a href="#team" onclick="showDiv('team')"><i class="fa fa-flag"></i>我的团队</a></li>
                 </ul>
             </div> <!-- .main-navigation -->
             <div class="social-icons">
@@ -225,7 +238,13 @@
 					
 					<!-- 我的资产 -->
 					<div id="fund" style="display:none"><iframe id="fund" src="EmployeeFunds.jsp" height="800px" width="100%"></iframe>
-					</div>			
+					</div>
+					
+					<!-- 我的团队 -->
+					<div id="team" style="display:none">
+						<iframe id="team" src="findTeam" height="800px" width="100%"></iframe>
+					</div>	
+							
                     <div class="row" id="footer">
                     <hr></hr>
                         <div class="col-md-12 text-center">
